@@ -1,4 +1,4 @@
-module NFA (NFA(..), Move(..), trans, onetrans, onemove, skipEpsilon) where
+module NFA (NFA(..), Move(..), trans) where
 
 import qualified Data.Set as S
 

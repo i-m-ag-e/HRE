@@ -1,7 +1,7 @@
 -- {-# LANGUAGE LambdaCase #-}
 {-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
 {-# HLINT ignore "Use lambda-case" #-}
-module Parse where
+module Parse(runParser, parseRE) where
 
 import           AST
 import           Control.Applicative
@@ -56,9 +56,6 @@ isNotEmpty = peek $> ()
 
 char :: Char -> Parser Char
 char c = satisfy (== c)
-
-charIn :: [Char] -> Parser Char
-charIn cs = satisfy (`elem` cs)
 
 isMetaChar :: Char -> Bool
 isMetaChar c = c `elem` "|*+()\\?."
